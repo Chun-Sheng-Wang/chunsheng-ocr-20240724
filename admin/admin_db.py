@@ -4,7 +4,7 @@ import sqlite3
 
 # SQLite 連接設置
 def get_connection():
-    return sqlite3.connect('TESTDB0724')
+    return sqlite3.connect('TESTDB0724.sqlite3')
 
 # 獲取數據
 def fetch_data():
