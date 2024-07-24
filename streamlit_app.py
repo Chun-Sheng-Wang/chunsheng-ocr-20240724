@@ -86,12 +86,15 @@ admin_1 = st.Page(
 )
 admin_2 = st.Page("admin/admin_2.py", title="圖檔批次處理", icon=":material/security:")
 
+
+admin_db = st.Page("admin/admin_db.py", title="資料表處理", icon=":material/handyman:")
+
 #account_pages = [logout_page, settings]
 account_pages = [logout_page]
 
 request_pages = [request_1, request_2]
 respond_pages = [respond_1, respond_2]
-admin_pages = [admin_1, admin_2]
+admin_pages = [admin_1, admin_2, admin_db]
 
 st.title("標準檢驗局OCR專案")
 #st.logo("images/horizontal_blue.png", icon_image="images/icon_blue.png")
