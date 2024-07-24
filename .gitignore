@@ -1,5 +1,7 @@
 .streamlit/secrets.toml
 
+*.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -164,7 +166,7 @@ cython_debug/
 #.idea/
 
 # 忽略 SQLite 資料庫文件
-TESTDB0724
+# TESTDB0724
 
 
 
