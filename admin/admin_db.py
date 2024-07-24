@@ -85,8 +85,8 @@ def main():
             st.success("刪除記錄成功")
 
     # 重新加載數據以顯示更新
-    st.subheader("更新後的資料表內容")
-    data = fetch_data()
-    st.data_editor(data)
+    # st.subheader("更新後的資料表內容")
+    # data = fetch_data()
+    # st.data_editor(data)
 
 main()
