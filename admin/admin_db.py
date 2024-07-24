@@ -16,6 +16,12 @@ def fetch_data():
 
 
 def main():
+    
+    # 初始化狀態
+    if 'data_updated' not in st.session_state:
+        st.session_state.data_updated = False
+    
+    
     #st.markdown("### 資料表處理")    
 
     # 顯示數據表
@@ -41,12 +47,17 @@ def main():
         
         conn.commit()
         conn.close()
-        st.success("資料已更新")
         
+        #st.success("資料已更新")
         # 重新加載頁面以顯示最新的數據
+        # 更新狀態並重新加載頁面
+        st.session_state.data_updated = True        
         st.rerun()
         
-
+    # 顯示更新訊息
+    if st.session_state.data_updated:
+        st.success("資料已更新")
+        st.session_state.data_updated = False
 
 
 main()
