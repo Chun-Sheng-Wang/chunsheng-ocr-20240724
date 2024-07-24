@@ -43,14 +43,17 @@ def main():
 
     # 顯示數據表
     st.subheader("資料表內容")
-    data = fetch_data()
-    edited_data = st.data_editor(data)
+    
+    with st.form("my_form"):    
+        data = fetch_data()
+        edited_data = st.data_editor(data, num_rows="dynamic")
+        submitted = st.form_submit_button("保存修改")  
+
 
     # 保存編輯後的數據
-    if st.button("保存修改"):
+    if submitted:
         conn = get_connection()
         cursor = conn.cursor()
-
         # 刪除所有現有記錄
         cursor.execute("DELETE FROM USERS")
         conn.commit()
