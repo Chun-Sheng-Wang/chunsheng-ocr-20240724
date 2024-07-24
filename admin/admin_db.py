@@ -56,7 +56,7 @@ def main():
         
     # 顯示更新訊息
     if st.session_state.data_updated:
-        st.success("資料已更新12")
+        st.success("資料已更新13")
         st.session_state.data_updated = False
 
 
