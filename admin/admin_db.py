@@ -76,6 +76,7 @@ def main():
         if st.sidebar.button("提交"):
             insert_record(new_id, new_name, new_password)
             st.success("新增記錄成功")
+            st.rerun()
 
     elif operation == "刪除記錄":
         st.sidebar.subheader("刪除記錄")
@@ -83,10 +84,7 @@ def main():
         if st.sidebar.button("提交"):
             delete_record(delete_id)
             st.success("刪除記錄成功")
+            st.rerun()
 
-    # 重新加載數據以顯示更新
-    # st.subheader("更新後的資料表內容")
-    # data = fetch_data()
-    # st.data_editor(data)
 
 main()
