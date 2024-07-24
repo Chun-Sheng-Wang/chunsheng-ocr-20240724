@@ -47,7 +47,8 @@ def main():
     with st.form("my_form"):    
         data = fetch_data()
         edited_data = st.data_editor(data, num_rows="dynamic", use_container_width=True)
-        submitted = st.form_submit_button("保存修改")  
+        #submitted = st.form_submit_button("保存修改") 
+        submitted = st.button("保存修改")  
 
 
     # 保存編輯後的數據
@@ -66,28 +67,6 @@ def main():
         conn.close()
         st.success("資料已更新")
 
-    # 選擇操作
-    st.sidebar.title("操作")
-    operation = st.sidebar.selectbox("選擇操作", ["新增記錄", "刪除記錄"])
-
-    # 表單輸入
-    if operation == "新增記錄":
-        st.sidebar.subheader("新增記錄")
-        new_id = st.sidebar.text_input("ID")
-        new_name = st.sidebar.text_input("Name")
-        new_password = st.sidebar.text_input("Password")
-        if st.sidebar.button("提交"):
-            insert_record(new_id, new_name, new_password)
-            st.success("新增記錄成功")
-            st.rerun()
-
-    elif operation == "刪除記錄":
-        st.sidebar.subheader("刪除記錄")
-        delete_id = st.sidebar.text_input("ID (刪除目標)")
-        if st.sidebar.button("提交"):
-            delete_record(delete_id)
-            st.success("刪除記錄成功")
-            st.rerun()
 
 
 main()
