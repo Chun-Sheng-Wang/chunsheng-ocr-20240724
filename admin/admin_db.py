@@ -42,6 +42,10 @@ def main():
         conn.commit()
         conn.close()
         st.success("資料已更新")
+        
+        # 重新加載頁面以顯示最新的數據
+        st.rerun()
+        
 
 
 
