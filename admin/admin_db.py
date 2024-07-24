@@ -46,7 +46,7 @@ def main():
     
     with st.form("my_form"):    
         data = fetch_data()
-        edited_data = st.data_editor(data, num_rows="dynamic")
+        edited_data = st.data_editor(data, num_rows="dynamic", use_container_width=True)
         submitted = st.form_submit_button("保存修改")  
 
 
