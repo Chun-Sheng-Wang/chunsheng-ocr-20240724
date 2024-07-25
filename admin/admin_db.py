@@ -59,12 +59,19 @@ def main():
     
     with st.form("my_form"):    
         data = fetch_data()
-        edited_data = st.data_editor(data, num_rows="dynamic", use_container_width=True)
+        edited_data = st.data_editor(data, key='DB_USERS', num_rows="dynamic", use_container_width=True)
         submitted = st.form_submit_button("保存修改")  
 
 
     # 保存編輯後的數據
     if submitted:
+        
+        editor_key=st.session_state["DB_USERS"]
+        
+        st.write(editor_key)
+        
+        return True
+        
         conn = get_connection()
         cursor = conn.cursor()
         # 刪除所有現有記錄
