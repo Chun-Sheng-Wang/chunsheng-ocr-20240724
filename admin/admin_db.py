@@ -1,7 +1,24 @@
 import streamlit as st
 import pandas as pd
 import sqlite3
-import os
+#import os
+
+import shutil
+import datetime
+
+
+
+def backup_db():
+    # 資料庫檔案位置
+    source_file = 'TESTDB0724.sqlite3'
+
+    # 設定備份檔案名稱
+    backup_file = f'TESTDB0724_backup_{datetime.datetime.now().strftime("%Y%m%d%H%M%S")}.sqlite3'
+
+    # 執行備份
+    shutil.copy2(source_file, backup_file)
+
+
 
 
 # SQLite 連接設置
@@ -60,6 +77,8 @@ def main():
         
         conn.commit()
         conn.close()
+        
+        backup_db()
         
         #st.success("資料已更新")
         # 重新加載頁面以顯示最新的數據
