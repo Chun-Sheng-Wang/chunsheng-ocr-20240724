@@ -13,7 +13,8 @@ def get_connection():
     # 執行初始化 SQL 指令
     cursor.execute('CREATE TABLE IF NOT EXISTS USERS (ID TEXT (30),NAME TEXT (50),PASSWORD TEXT (50),PRIMARY KEY (ID))')
     conn.commit()
-    conn.close()    
+    
+    #conn.close()    
     
     return conn
 
