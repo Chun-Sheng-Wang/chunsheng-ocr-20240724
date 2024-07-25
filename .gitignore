@@ -2,6 +2,8 @@
 
 *.sqlite3
 
+TESTDB0724.sqlite3
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
